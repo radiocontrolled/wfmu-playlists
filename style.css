@@ -3,9 +3,6 @@ body, svg{
 }
 
 
-article{
-	margin-top: 2em;
-}
 
 .axis path,
 .axis line,
@@ -18,4 +15,7 @@ article{
 .axis text, .domain {
     
     font-size: 11px;
+}
+.hidden{
+	display: none;
 }

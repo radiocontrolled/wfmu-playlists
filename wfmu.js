@@ -3,7 +3,7 @@
 var w =  document.body.clientWidth;
 var h =  document.body.clientHeight;
 var r = 7;
-var padding = 30;
+var padding = 100;
 
 
 /* 
@@ -89,10 +89,10 @@ function foo(data){
 	    .style("fill", function(d,i){
 			return color(Math.floor((d[1])));
 		});
-	    
+
 
 	
-	
+	/*
 	svg.selectAll("text")
    	    .data(scatterCoordinates)
         .enter()
@@ -113,7 +113,8 @@ function foo(data){
       		"font-family": "Trebuchet MS,​Lucida Grande,​Arial,​sans-serif",
       		"font-size": "12px",
       		"font-weight": "600"
-		})
+		})*/
+		
 	
 
 
@@ -146,6 +147,35 @@ function foo(data){
       		"font-weight": "600"
 		})
         .call(yAxis);
+        
+    svg.append("text")
+    	.attr("text-anchor", "end")
+    	.attr("x", w)
+    	.attr("dx", "-40%")
+    	.attr("dy", "-4em")
+    	.attr("y", h - 6)
+    	.text("Number of Free Music Archive playlists")
+    	.style({  
+			"fill": "black",
+      		"font-family": "Trebuchet MS,​Lucida Grande,​Arial,​sans-serif",
+      		"font-size": "12px",
+      		"font-weight": "600"
+		});
+	
+	svg.append("text")
+    	.attr("class", "y label")
+    	.attr("text-anchor", "end")
+    	.attr("y", 6)
+    	.attr("dx", "-20%")
+    	.attr("dy", "4em")
+    	.attr("transform", "rotate(-90)")
+    	.text("Number of curators")
+    	.style({  
+			"fill": "black",
+      		"font-family": "Trebuchet MS,​Lucida Grande,​Arial,​sans-serif",
+      		"font-size": "12px",
+      		"font-weight": "600"
+		});
 	
 }
 
