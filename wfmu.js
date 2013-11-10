@@ -150,10 +150,10 @@ function foo(data){
         
     svg.append("text")
     	.attr("text-anchor", "end")
-    	.attr("x", w)
-    	.attr("dx", "-40%")
+    	.attr("x", w-padding)
+    //	.attr("dx", "-70%")
     	.attr("dy", "-4em")
-    	.attr("y", h - 6)
+    	.attr("y", h)
     	.text("Number of Free Music Archive playlists")
     	.style({  
 			"fill": "black",
@@ -166,10 +166,10 @@ function foo(data){
     	.attr("class", "y label")
     	.attr("text-anchor", "end")
     	.attr("y", 6)
-    	.attr("dx", "-20%")
+    	//.attr("dx", "-25%")
     	.attr("dy", "4em")
     	.attr("transform", "rotate(-90)")
-    	.text("Number of curators")
+    	.text("Number of Free Music Archive curators")
     	.style({  
 			"fill": "black",
       		"font-family": "Trebuchet MS,​Lucida Grande,​Arial,​sans-serif",
