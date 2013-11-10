@@ -14,7 +14,7 @@ var padding = 100;
  * grab json file of recent tracks added to the FMA archive
  * see http://freemusicarchive.org/api/docs/ for more details
  */
-function requestRecentTracks() {
+function requestCurators() {
   d3.jsonp("http://freemusicarchive.org/api/get/curators.jsonp?callback=foo&limit=200&sort_by=curator_playlists&sort_dir=desc");
 }
 
@@ -89,7 +89,6 @@ function foo(data){
 	    .style("fill", function(d,i){
 			return color(Math.floor((d[1])));
 		});
-
 
 	
 	/*
@@ -179,4 +178,4 @@ function foo(data){
 	
 }
 
-requestRecentTracks();
+requestCurators();
