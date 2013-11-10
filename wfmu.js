@@ -123,6 +123,13 @@ function foo(data){
     
     svg.append("g")
         .attr("transform", "translate(0," + (h - padding) + ")")
+        .attr("class","axis")
+        .style({  
+			"fill": "black",
+      		"font-family": "Trebuchet MS,​Lucida Grande,​Arial,​sans-serif",
+      		"font-size": "12px",
+      		"font-weight": "600"
+		})
     	.call(xAxis);
     	
     var yAxis = d3.svg.axis()
@@ -132,6 +139,12 @@ function foo(data){
 	svg.append("g")
    		.attr("class", "axis")
         .attr("transform", "translate(" + padding + ",0)")
+        .style({  
+			"fill": "black",
+      		"font-family": "Trebuchet MS,​Lucida Grande,​Arial,​sans-serif",
+      		"font-size": "12px",
+      		"font-weight": "600"
+		})
         .call(yAxis);
 	
 }

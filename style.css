@@ -2,20 +2,19 @@ body, svg{
 	background: #EEEEEE;
 }
 
-path.domain	{
-    fill: blue;
-    shape-rendering: crispEdges;
-    stroke-width: 1;
-    
-    
-}
-
-text {
-    font-family: sans-serif;
-    font-size: 11px;
-}
 
 article{
 	margin-top: 1em;
 }
 
+.axis path,
+.axis line,
+.domain {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text, .domain {
+    font-size: 11px;
+}
