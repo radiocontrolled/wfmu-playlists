@@ -11,14 +11,14 @@ var padding = 100;
  */
 
 /*
- * grab json file of recent tracks added to the FMA archive
+ * grab jsonp file of recent tracks added to the FMA archive
  * see http://freemusicarchive.org/api/docs/ for more details
  */
 function requestCurators() {
-  d3.jsonp("http://freemusicarchive.org/api/get/curators.jsonp?callback=foo&limit=200&sort_by=curator_playlists&sort_dir=desc");
+  d3.jsonp("http://freemusicarchive.org/api/get/curators.jsonp?callback=visualise&limit=200&sort_by=curator_playlists&sort_dir=desc");
 }
 
-function foo(data){
+function visualise(data){
 	
 	var color = d3.scale.category10(); 
         
@@ -65,11 +65,11 @@ function foo(data){
     
     var yScale = d3.scale.linear()
     	.domain([1, d3.max(scatterCoordinates, function(d) { return d[0]+2; })])
-        .range([0 + padding, h]);
+        .range([4 + padding, h]);
             
     var yAxisScale = d3.scale.linear()
-    	.domain([1, d3.max(scatterCoordinates, function(d) { return d[0]; })])
-        .range([h-padding,0]);
+    	.domain([0, d3.max(scatterCoordinates, function(d) { return d[0]; })])
+        .range([h-padding,1]);
     
     
     var circles = svg.selectAll("circle")
@@ -77,11 +77,9 @@ function foo(data){
     	.enter()
     	.append("circle")
     	.attr("cx", function(d) {
-        	//return d[0];
 	   		return xScale(d[1]);
 	   	})
 	    .attr("cy", function(d) {
-	       // return d[1];
 	       return h - yScale(d[0]);
 	   	})
 	    .attr("r", r)
@@ -100,12 +98,14 @@ function foo(data){
     	
     var yAxis = d3.svg.axis()
         .scale(yAxisScale)
-        .orient("left");
+        .orient("left")
+        .ticks(15);
        
 	svg.append("g")
    		.attr("class", "axis")
         .attr("transform", "translate(" + padding + ",0)")
         .call(yAxis);
+        
         
     svg.append("text")
     	.attr("text-anchor", "end")
