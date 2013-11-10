@@ -2,8 +2,9 @@ body, svg{
 	background: #EEEEEE;
 }
 
-
-
+body{
+	padding-top: 1em;
+}
 .axis path,
 .axis line,
 .domain {
@@ -13,9 +14,15 @@ body, svg{
 }
 
 .axis text, .domain {
-    
     font-size: 11px;
+}
+.axis{
+	fill: black;
+    font-family: "Trebuchet MS", ​Arial,​sans-serif;
+    font-size: 12px;
+    font-weight: 600;
 }
 .hidden{
 	display: none;
 }
+

@@ -7,7 +7,7 @@ var padding = 100;
 
 
 /* 
- * How many playlists are Free Music Archive curators contributing to the archive?
+ * How many curators are contributing playlists to the Free Music Archive?
  */
 
 /*
@@ -44,8 +44,7 @@ function foo(data){
 	       		scatterCoordinates.push([result[i],parseInt(i)]);
 	    	
 	    }
-	    console.log(scatterCoordinates);
-	    
+
 	 //make an SVG element and append it to the article
 	 var svg = d3.select("article")
 		.append("svg")
@@ -90,33 +89,6 @@ function foo(data){
 			return color(Math.floor((d[1])));
 		});
 
-	
-	/*
-	svg.selectAll("text")
-   	    .data(scatterCoordinates)
-        .enter()
-        .append("text")
-        .text(function(d) {
-        	return d[0] + "," + d[1];
-        })
-        .attr("x", function(d) {
-        	//return d[1];
-        	return xScale(d[1]) - padding;
-   		})
-   		.attr("y", function(d) {
-        	//return h - d[0];
-        	return h - yScale(d[0]) ;
-   		})
-        .style({  
-			"fill": "black",
-      		"font-family": "Trebuchet MS,​Lucida Grande,​Arial,​sans-serif",
-      		"font-size": "12px",
-      		"font-weight": "600"
-		})*/
-		
-	
-
-
 	var xAxis = d3.svg.axis()
         .scale(xScale)
         .orient("bottom");
@@ -124,12 +96,6 @@ function foo(data){
     svg.append("g")
         .attr("transform", "translate(0," + (h - padding) + ")")
         .attr("class","axis")
-        .style({  
-			"fill": "black",
-      		"font-family": "Trebuchet MS,​Lucida Grande,​Arial,​sans-serif",
-      		"font-size": "12px",
-      		"font-weight": "600"
-		})
     	.call(xAxis);
     	
     var yAxis = d3.svg.axis()
@@ -139,43 +105,25 @@ function foo(data){
 	svg.append("g")
    		.attr("class", "axis")
         .attr("transform", "translate(" + padding + ",0)")
-        .style({  
-			"fill": "black",
-      		"font-family": "Trebuchet MS,​Lucida Grande,​Arial,​sans-serif",
-      		"font-size": "12px",
-      		"font-weight": "600"
-		})
         .call(yAxis);
         
     svg.append("text")
     	.attr("text-anchor", "end")
     	.attr("x", w-padding)
-    //	.attr("dx", "-70%")
     	.attr("dy", "-4em")
     	.attr("y", h)
+    	.attr("class","axis")
     	.text("Number of Free Music Archive playlists")
-    	.style({  
-			"fill": "black",
-      		"font-family": "Trebuchet MS,​Lucida Grande,​Arial,​sans-serif",
-      		"font-size": "12px",
-      		"font-weight": "600"
-		});
+    	
 	
 	svg.append("text")
     	.attr("class", "y label")
     	.attr("text-anchor", "end")
     	.attr("y", 6)
-    	//.attr("dx", "-25%")
     	.attr("dy", "4em")
     	.attr("transform", "rotate(-90)")
+    	.attr("class", "axis")
     	.text("Number of Free Music Archive curators")
-    	.style({  
-			"fill": "black",
-      		"font-family": "Trebuchet MS,​Lucida Grande,​Arial,​sans-serif",
-      		"font-size": "12px",
-      		"font-weight": "600"
-		});
-	
 }
 
 requestCurators();
