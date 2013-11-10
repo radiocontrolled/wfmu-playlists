@@ -1,0 +1,21 @@
+body, svg{
+	background: #EEEEEE;
+}
+
+path.domain	{
+    fill: blue;
+    shape-rendering: crispEdges;
+    stroke-width: 1;
+    
+    
+}
+
+text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+article{
+	margin-top: 1em;
+}
+
