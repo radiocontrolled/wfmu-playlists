@@ -2,7 +2,7 @@
 //width and height of the canvas
 var w =  document.body.clientWidth;
 var h =  document.body.clientHeight;
-var r = 10;
+var r = 7;
 var padding = 30;
 
 
@@ -65,8 +65,8 @@ function foo(data){
         .range([0 + padding, w-padding]);
     
     var yScale = d3.scale.linear()
-    	.domain([1, d3.max(scatterCoordinates, function(d) { return d[0]; })])
-        .range([0 + padding, h-padding]);
+    	.domain([1, d3.max(scatterCoordinates, function(d) { return d[0]+2; })])
+        .range([0 + padding, h]);
             
     var yAxisScale = d3.scale.linear()
     	.domain([1, d3.max(scatterCoordinates, function(d) { return d[0]; })])
