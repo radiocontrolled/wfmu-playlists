@@ -1,7 +1,7 @@
 
 //width and height of the canvas
-var w =  document.body.clientWidth;
-var h =  document.body.clientHeight;
+var w = 900;
+var h =  600;
 var r = 7;
 var padding = 100;
 
@@ -108,21 +108,25 @@ function visualise(data){
         
         
     svg.append("text")
-    	.attr("text-anchor", "end")
-    	.attr("x", w-padding)
-    	.attr("dy", "-4em")
-    	.attr("y", h)
-    	.attr("class","axis")
+    	.attr({
+    		"text-anchor":"end",
+  			"x":w-padding,
+  			"dy":"-4em",
+  			"y":h,
+  			"class":"axis"
+    	})
     	.text("Number of Free Music Archive playlists")
     	
 	
 	svg.append("text")
-    	.attr("class", "y label")
-    	.attr("text-anchor", "end")
-    	.attr("y", 6)
-    	.attr("dy", "4em")
-    	.attr("transform", "rotate(-90)")
-    	.attr("class", "axis")
+    	.attr({
+    		"class": "y label",
+    		"text-anchor": "end",
+    		"y":6,
+    		"dy":"4em",	
+    		"transform": "rotate(-90)",
+    		"class":"axis"
+    	})
     	.text("Number of Free Music Archive curators")
 }
 
